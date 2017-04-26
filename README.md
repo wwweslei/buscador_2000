@@ -1,6 +1,6 @@
 # buscador_2000
 
-#### Encontra documentos que contenha a frases selecionada.
+#### Encontra documentos que contenha a frase selecionada.
 #### A busca pode ser feita através de *expressão regular.*
 
 Exemplo de uso.
