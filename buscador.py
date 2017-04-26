@@ -1,10 +1,12 @@
-# coding: utf-8
 import os
 import re
 import time
 from argparse import ArgumentParser
 
-parser = ArgumentParser(argument_default='/home/weslei/PycharmProjects/')
+__author__ = "weslei silva bomfim"
+__project__ = 'buscador 2000'
+
+parser = ArgumentParser(argument_default=os.path.dirname(os.getcwd()))
 parser.add_argument('regex', help='Digite uma expressão regular ')
 parser.add_argument('diretorio', nargs='?', help='Diretório da busca')
 argumentos = parser.parse_args()
@@ -15,7 +17,7 @@ def busca(regex=argumentos.regex, dir_name=argumentos.diretorio):
     for name in os.listdir(dir_name):
         path = os.path.join(dir_name, name)
         if os.path.isfile(path):
-            time.sleep(0.02)
+            time.sleep(0)
             try:
                 with open(os.path.join(dir_name, name)) as doc:
                     confirme = re.findall(regex, doc.read())
@@ -36,3 +38,4 @@ if __name__ == '__main__':
     print('\n\n\nSua busca retornou os seguintes resultados: \n')
     for x in b:
         print('Diretório  ', x, '\033[32m',  '\t\tarquivo\t', b[x], '\033[0;0m')
+
